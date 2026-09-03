@@ -14,5 +14,5 @@ if (text.includes(yourName)) {
 
   const newText: string = text.slice(0, firstNameIndex).concat(yourName).concat(lastTextAfterName);
 
-  console.log(newText);
+  console.log(newText.toLocaleLowerCase());
 }
