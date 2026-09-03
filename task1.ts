@@ -8,9 +8,11 @@ const yourName: string = "Настя";
 if (text.includes(yourName)) {
   console.log(text.toLowerCase());
 } else {
-  const newText: string = text
-    .slice(0, text.indexOf(name))
-    .concat(yourName)
-    .concat(text.slice(text.indexOf(name) + name.length));
+  const firstNameIndex = text.indexOf(name);
+  const lastNameIndex = firstNameIndex + name.length;
+  const lastTextAfterName = text.slice(lastNameIndex);
+
+  const newText: string = text.slice(0, firstNameIndex).concat(yourName).concat(lastTextAfterName);
+
   console.log(newText);
 }
